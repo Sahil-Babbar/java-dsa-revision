@@ -1,4 +1,4 @@
-package main.java.arrays;
+package main.java.strings;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -10,10 +10,8 @@ public class CharacterFrequency {
         str = input.next();
         HashMap<Character, Integer> charFreqMap = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
-            if (charFreqMap.containsKey(str.charAt(i)))
-                charFreqMap.put(str.charAt(i), charFreqMap.get(str.charAt(i)) + 1);
-            else
-                charFreqMap.put(str.charAt(i), 1);
+            charFreqMap.put(str.charAt(i),
+                    charFreqMap.getOrDefault(str.charAt(i), 0) + 1);
         }
         System.out.println(charFreqMap);
     }
